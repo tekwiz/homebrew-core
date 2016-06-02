@@ -65,9 +65,9 @@ class Fontforge < Formula
       --disable-silent-rules
       --disable-dependency-tracking
       --with-pythonbinary=#{which "python2.7"}
-      --without-x
     ]
 
+    args << "--without-x" if build.without? "x"
     args << "--without-libpng" if build.without? "libpng"
     args << "--without-libjpeg" if build.without? "jpeg"
     args << "--without-libtiff" if build.without? "libtiff"
